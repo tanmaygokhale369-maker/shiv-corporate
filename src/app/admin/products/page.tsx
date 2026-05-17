@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
@@ -33,6 +33,7 @@ export default function AdminProductsPage() {
   const [form, setForm] = useState({
     name: "",
     category: "Corporate Gifts",
+    subcategory: "",
     price: "",
     original_price: "",
     stock: "100",
@@ -159,16 +160,39 @@ export default function AdminProductsPage() {
             </div>
             <div>
               <label className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-1.5">Category *</label>
-              <select value={form.category} onChange={e => setForm({...form, category: e.target.value})} className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-dark-800 border border-dark-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm focus:outline-none focus:border-brand-500">
+              <select value={form.category} onChange={e => setForm({...form, category: e.target.value, subcategory: ""})} className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-dark-800 border border-dark-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm focus:outline-none focus:border-brand-500">
                 {CATEGORIES.map(c => <option key={c}>{c}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-1.5">Price (₹)</label>
+              <label className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-1.5">Sub Category</label>
+              <select value={form.subcategory} onChange={e => setForm({...form, subcategory: e.target.value})} className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-dark-800 border border-dark-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm focus:outline-none focus:border-brand-500">
+                <option value="">None</option>
+                {form.category === "Corporate Gifts" && <>
+                  <option value="keychains">Keychains</option>
+                  <option value="gift-sets">Gift Sets</option>
+                  <option value="notebook-diary">Notebook Diary</option>
+                  <option value="leather-bags">Leather Bags</option>
+                  <option value="metal-pens">Metal Pens</option>
+                  <option value="plastic-pens">Plastic Pens</option>
+                  <option value="bottles-mugs">Bottles & Mugs</option>
+                  <option value="cardholder">Cardholder</option>
+                  <option value="hand-bags">Hand Bags</option>
+                  <option value="organizers">Organizers</option>
+                  <option value="trophies">Trophies</option>
+                  <option value="powerbank-diaries">Powerbank & Diaries</option>
+                  <option value="mobile-stand">Mobile Stand</option>
+                  <option value="pendrive">Pendrive</option>
+                  <option value="jute-folders">Jute Folders</option>
+                </>}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-1.5">Price (â‚¹)</label>
               <input type="number" value={form.price} onChange={e => setForm({...form, price: e.target.value})} className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-dark-800 border border-dark-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm focus:outline-none focus:border-brand-500" placeholder="0" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-1.5">Original Price (₹)</label>
+              <label className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-1.5">Original Price (â‚¹)</label>
               <input type="number" value={form.original_price} onChange={e => setForm({...form, original_price: e.target.value})} className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-dark-800 border border-dark-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm focus:outline-none focus:border-brand-500" placeholder="0" />
             </div>
             <div>
@@ -244,7 +268,7 @@ export default function AdminProductsPage() {
                   </div>
                 </td>
                 <td className="px-6 py-4 text-sm text-dark-500 capitalize">{p.category?.replace(/-/g, " ")}</td>
-                <td className="px-6 py-4 text-sm text-dark-900 dark:text-white">₹{p.price}</td>
+                <td className="px-6 py-4 text-sm text-dark-900 dark:text-white">â‚¹{p.price}</td>
                 <td className="px-6 py-4 text-sm text-dark-500">{p.stock}</td>
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-2">
@@ -264,3 +288,4 @@ export default function AdminProductsPage() {
     </div>
   );
 }
+
