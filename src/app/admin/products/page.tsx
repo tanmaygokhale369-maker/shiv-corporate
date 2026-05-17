@@ -82,6 +82,7 @@ export default function AdminProductsPage() {
         price: parseFloat(form.price) || 0,
         original_price: parseFloat(form.original_price) || null,
         stock: parseInt(form.stock) || 100,
+        subcategory: form.subcategory || null,
         description: form.description,
         is_featured: form.is_featured,
         is_active: true,
@@ -289,5 +290,6 @@ export default function AdminProductsPage() {
     </div>
   );
 }
+
 
 
