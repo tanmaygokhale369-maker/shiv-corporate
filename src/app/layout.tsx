@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
@@ -56,6 +56,9 @@ export const metadata: Metadata = {
     title: "Shiv Corporate Solution",
     description: "Premium corporate gifts & housekeeping products. Pan-India delivery.",
   },
+  verification: {
+    google: "s21LfkprgUD_g3qH3ff0BnvS1IGfQoJp2MPANVicHsw",
+  },
   robots: {
     index: true,
     follow: true,
@@ -87,3 +90,4 @@ export default function RootLayout({
     </html>
   );
 }
+
