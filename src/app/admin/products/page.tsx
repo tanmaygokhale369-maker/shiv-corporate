@@ -115,6 +115,7 @@ export default function AdminProductsPage() {
     setForm({
       name: p.name,
       category: p.category,
+      subcategory: p.subcategory || "",
       price: p.price?.toString() || "",
       original_price: p.original_price?.toString() || "",
       stock: p.stock?.toString() || "100",
@@ -288,4 +289,5 @@ export default function AdminProductsPage() {
     </div>
   );
 }
+
 
