@@ -130,7 +130,7 @@ export default function AdminProductsPage() {
   }
 
   function resetForm() {
-    setForm({ name: "", category: "Corporate Gifts", price: "", original_price: "", stock: "100", description: "", is_featured: false });
+    setForm({ name: "", category: "Corporate Gifts", subcategory: "", price: "", original_price: "", stock: "100", description: "", is_featured: false });
     setImageFiles([]);
     setImagePreviews([]);
     setEditId(null);
@@ -290,6 +290,7 @@ export default function AdminProductsPage() {
     </div>
   );
 }
+
 
 
 
