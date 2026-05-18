@@ -22,9 +22,7 @@ export function HeroSection() {
       className="relative min-h-[100vh] flex items-center overflow-hidden"
     >
       {/* Animated Background */}
-      <div className="absolute inset-0">
-        <img src="/office-bg.jpg" alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-dark-950/60" />
+      <div className="absolute inset-0 bg-white dark:bg-dark-950">
         {/* Grid pattern */}
         <div className="absolute inset-0 grid-pattern" />
 
@@ -154,5 +152,7 @@ export function HeroSection() {
     </section>
   );
 }
+
+
 
 
