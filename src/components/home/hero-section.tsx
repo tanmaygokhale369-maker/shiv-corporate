@@ -58,7 +58,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <motion.div style={{ y, opacity }} className="relative z-10 container-custom">
+      <motion.div style={{ y }} className="relative z-10 container-custom">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <motion.div
@@ -152,6 +152,7 @@ export function HeroSection() {
     </section>
   );
 }
+
 
 
 
