@@ -14,7 +14,7 @@ export function HeroSection() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 1]);
 
   return (
     <section
@@ -152,6 +152,7 @@ export function HeroSection() {
     </section>
   );
 }
+
 
 
 
