@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -80,7 +80,7 @@ export function Navbar() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <span>🇮🇳 India-wide Delivery</span>
+            <span>ðŸ‡®ðŸ‡³ All Over Maharashtra Delivery</span>
             <span className="text-dark-600">|</span>
             <span>Bulk Orders Welcome</span>
           </div>
@@ -277,3 +277,4 @@ export function Navbar() {
     </>
   );
 }
+
