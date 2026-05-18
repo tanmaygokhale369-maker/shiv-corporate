@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import Link from "next/link";
@@ -22,7 +22,9 @@ export function HeroSection() {
       className="relative min-h-[100vh] flex items-center overflow-hidden"
     >
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-white dark:bg-dark-950">
+      <div className="absolute inset-0">
+        <img src="/office-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-white/80 dark:bg-dark-950/90" />
         {/* Grid pattern */}
         <div className="absolute inset-0 grid-pattern" />
 
@@ -152,3 +154,4 @@ export function HeroSection() {
     </section>
   );
 }
+
