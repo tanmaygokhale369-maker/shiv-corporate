@@ -34,9 +34,22 @@ export default function ContactPage() {
       return;
     }
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    toast.success("Message sent! We will get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
+    try {
+      const { createClient } = await import('@supabase/supabase-js');
+      const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
+      await sb.from('enquiries').insert({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        message: formData.subject + (formData.message ? ': ' + formData.message : ''),
+        status: 'new'
+      });
+      toast.success('Message sent! We will get back to you soon.');
+      setFormData({ name: '', email: '', phone: '', company: '', subject: '', message: '' });
+    } catch(e) {
+      toast.error('Failed to send. Please WhatsApp us directly.');
+    }
     setIsSubmitting(false);
   };
 
@@ -175,3 +188,4 @@ export default function ContactPage() {
     </div>
   );
 }
+
